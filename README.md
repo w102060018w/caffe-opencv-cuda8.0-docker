@@ -35,7 +35,6 @@ sudo nvidia-docker run -it -v ~/Realtime_Multi-Person_Pose_Estimation:/HPE_model
 ## Acknowledgments
 
 Big thanks to 
-[dl-docker](https://github.com/floydhub/dl-docker)
-and 
-https://github.com/jerryrt/docker_ubuntu_14.04-opencv-git-latest <br />
+* [dl-docker](https://github.com/floydhub/dl-docker)
+* https://github.com/jerryrt/docker_ubuntu_14.04-opencv-git-latest <br />
 I mainly modify the Dockerfile from the above two resources.
