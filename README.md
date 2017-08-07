@@ -32,10 +32,10 @@ docker pull winnie16/caffe-opencv-cuda8.0:gpu
 sudo nvidia-docker run -it -v ~/Realtime_Multi-Person_Pose_Estimation:/HPE_model_testing_0725 -p 8888:8888 --expose 6006 --name my-caffe-docker-demo winnie16/caffe-opencv-cuda8.0:gpu bash
 ```
 
-## Acknowledgement
+## Acknowledgments
 
 Big thanks to 
 [dl-docker](https://github.com/floydhub/dl-docker)
 and 
-https://github.com/jerryrt/docker_ubuntu_14.04-opencv-git-latest
+https://github.com/jerryrt/docker_ubuntu_14.04-opencv-git-latest <br />
 I mainly modify the Dockerfile from the above two resources.
