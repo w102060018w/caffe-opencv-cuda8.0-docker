@@ -34,10 +34,12 @@ sudo nvidia-docker run -it -v ~/Realtime_Multi-Person_Pose_Estimation:/HPE_model
 
 ## Using Jupyter Notebook
 
+Type the following command inside the container and go to the [localhost:8888](http://localhost:8888/) you can see the jupyter notebook start running.
+
 ```
 jupyter-notebook --ip=0.0.0.0 --allow-root
 ```
-go to the [localhost:8888](http://localhost:8888/) you can see the jupyter notebook start running. <br />
+
 If you run Docker on the GCP, you need to connect your local host to the port running on the GCP, please follow this [link](https://paper.dropbox.com/doc/Running-Jupyter-Notebook-on-the-GCP-SoWlQwj2xpgaR9k2AhH3Z).
 
 
