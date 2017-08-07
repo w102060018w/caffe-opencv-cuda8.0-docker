@@ -1,1 +1,1 @@
-# caffe-opencv-cuda8.0-docker
+# Docker image for caffe
