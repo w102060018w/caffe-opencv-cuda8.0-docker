@@ -2,7 +2,7 @@
 
 Here is the dockerfile to run with caffe and other common libraries.
 
-## Detail
+## Details
 
 When building the images with the provided Dockerfile, you will get:
 
@@ -31,6 +31,9 @@ docker pull winnie16/caffe-opencv-cuda8.0:gpu
 ```
 sudo nvidia-docker run -it -v ~/Realtime_Multi-Person_Pose_Estimation:/HPE_model_testing_0725 -p 8888:8888 --expose 6006 --name my-caffe-docker-demo winnie16/caffe-opencv-cuda8.0:gpu bash
 ```
+
+## Using Jupyter Notebook
+
 
 ## Acknowledgments
 
