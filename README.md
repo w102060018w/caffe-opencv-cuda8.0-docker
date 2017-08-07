@@ -51,7 +51,7 @@ sudo nvidia-docker run -it -v ~/Nature-Cut-Out:/auto-cutout -p 8888:8888 --expos
 |`winnie16/caffe-opencv-cuda8.0:gpu`   | This is the image you are going to run. The format is `image:tag`|
 |`bash`       | This provides the default command when the container is started. Even if this was not provided, bash is the default command and just starts a Bash session.|
 
-### Using Jupyter Notebook
+### Using Jupyter Notebook(Optional)
 
 Type the following command inside the container and go to the [localhost:8888](http://localhost:8888/) you can see the jupyter notebook start running.
 
