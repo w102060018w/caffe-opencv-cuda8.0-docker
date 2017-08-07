@@ -29,15 +29,15 @@ docker pull winnie16/caffe-opencv-cuda8.0:gpu
 
 ### Run the Docker images as Containers
 
-Suppose I plan to use the caffe model on human pose estimation. <br />
-First clone the [Realtime Multi-Person Pose Estimation](https://github.com/ZheC/Realtime_Multi-Person_Pose_Estimation) from the github:
+Suppose I plan to use the caffe model on human pose estimation and Nature cut out. <br />
+First clone the [Nature-Cut-Out](https://github.com/w102060018w/Nature-Cut-Out) from the github:
 ```
-git clone https://github.com/ZheC/Realtime_Multi-Person_Pose_Estimation.git
+git clone https://github.com/w102060018w/Nature-Cut-Out.git
 ```
 and then we can run the container with shared filesystems (-v)
 
 ```
-sudo nvidia-docker run -it -v ~/Realtime_Multi-Person_Pose_Estimation:/HPE_model_testing_0725 -p 8888:8888 --expose 6006 --name my-caffe-docker-demo winnie16/caffe-opencv-cuda8.0:gpu bash
+sudo nvidia-docker run -it -v ~/Nature-Cut-Out:/auto-cutout -p 8888:8888 --expose 6006 --name my-caffe-docker-demo winnie16/caffe-opencv-cuda8.0:gpu bash
 ```
 
 | Parameter      | Explanation |
