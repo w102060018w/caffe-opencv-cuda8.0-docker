@@ -12,7 +12,7 @@ When building the images with the provided Dockerfile, you will get:
 * [cuDNN v5](https://developer.nvidia.com/cudnn) (GPU version only)
 * [iPython/Jupyter Notebook](http://jupyter.org/)
 * [Numpy](http://www.numpy.org/), [SciPy](https://www.scipy.org/), [Pandas](http://pandas.pydata.org/), [Scikit Learn](http://scikit-learn.org/), [Matplotlib](http://matplotlib.org/)
-* [OpenCV](http://opencv.org/)
+* [OpenCV 3.3.0](http://opencv.org/)
 
 ## Prerequisites
 
@@ -29,9 +29,27 @@ docker pull winnie16/caffe-opencv-cuda8.0:gpu
 
 ### Run the Docker images as Containers
 
+Suppose I plan to use the caffe model on human pose estimation. <br />
+First clone the [Realtime Multi-Person Pose Estimation](https://github.com/ZheC/Realtime_Multi-Person_Pose_Estimation) from the github:
+```
+git clone https://github.com/ZheC/Realtime_Multi-Person_Pose_Estimation.git
+```
+and then we can run the container with shared filesystems (-v)
+
 ```
 sudo nvidia-docker run -it -v ~/Realtime_Multi-Person_Pose_Estimation:/HPE_model_testing_0725 -p 8888:8888 --expose 6006 --name my-caffe-docker-demo winnie16/caffe-opencv-cuda8.0:gpu bash
 ```
+
+| Parameter      | Explanation |
+|----------------|-------------|
+|`nvidia-docker`| This will provision a container with the necessary components to execute code on the GPU. To see more details please take a look at [here](https://devblogs.nvidia.com/parallelforall/nvidia-docker-gpu-server-application-deployment-made-easy/)|
+|`-it`             | This creates an interactive terminal you can use to iteract with your container |
+|`-v /sharedfolder:/root/sharedfolder/` | This shares the folder `/sharedfolder` on your host machine to `/root/sharedfolder/` inside your container. Any data written to this folder by the container will be persistent. You can modify this to anything of the format `-v /local/shared/folder:/shared/folder/in/container/`. See [Docker container persistence](#docker-container-persistence)
+|`-p 8888:8888`   | This exposes the ports inside the container so they can be accessed from the host. The format is `-p <host-port>:<container-port>`. The default iPython Notebook runs on port 8888|
+|`--expose 6006` | Expose a port or a range of ports inside the container|
+|`--name my-caffe-docker-demo`| You can assign a name to the container|
+|`winnie16/caffe-opencv-cuda8.0:gpu`   | This is the image you are going to run. The format is `image:tag`|
+|`bash`       | This provides the default command when the container is started. Even if this was not provided, bash is the default command and just starts a Bash session.|
 
 ### Using Jupyter Notebook
 
