@@ -30,7 +30,8 @@ docker pull winnie16/caffe-opencv-cuda8.0:gpu
 ### Run the Docker images as Containers
 
 Suppose I plan to use the caffe model on human pose estimation and Nature cut out. <br />
-First clone the [Nature-Cut-Out](https://github.com/w102060018w/Nature-Cut-Out) from the github:
+First clone the [Nature-Cut-Out](https://github.com/w102060018w/Nature-Cut-Out) from the github:<br />
+(If you have already download the repository you want, don't need to download it again)
 ```
 git clone https://github.com/w102060018w/Nature-Cut-Out.git
 ```
